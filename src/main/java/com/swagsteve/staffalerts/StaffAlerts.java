@@ -41,6 +41,9 @@ public final class StaffAlerts extends JavaPlugin implements Listener {
         //Commands
         this.getCommand("sa-reload").setExecutor(new ReloadCommand());
 
+        //Events
+        this.getServer().getPluginManager().registerEvents(this,this);
+
     }
 
     @EventHandler

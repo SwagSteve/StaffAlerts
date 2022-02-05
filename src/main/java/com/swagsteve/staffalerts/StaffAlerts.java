@@ -49,33 +49,23 @@ public final class StaffAlerts extends JavaPlugin implements Listener {
     @EventHandler
     public static void onJoin(PlayerJoinEvent e) {
 
-        Bukkit.getScheduler().scheduleSyncDelayedTask(StaffAlerts.getInstance(), new Runnable() {
-            @Override
-            public void run() {
-                if (e.getPlayer().isOp()) {
+        if (e.getPlayer().isOp()) {
 
-                    Player p = e.getPlayer();
+            Player p = e.getPlayer();
 
-                    e.setJoinMessage(Utils.Color(joinmsg.replace("%player%", p.getName())));
-                }
-            }
-        },20L);
+            e.setJoinMessage(Utils.Color(joinmsg.replace("%player%", p.getName())));
+        }
     }
 
     @EventHandler
     public static void onLeave(PlayerQuitEvent e) {
 
-        Bukkit.getScheduler().scheduleSyncDelayedTask(StaffAlerts.getInstance(), new Runnable() {
-            @Override
-            public void run() {
-                if (e.getPlayer().isOp()) {
+        if (e.getPlayer().isOp()) {
 
-                    Player p = e.getPlayer();
+            Player p = e.getPlayer();
+            e.setQuitMessage(Utils.Color(leavemsg.replace("%player%", p.getName())));
+        }
 
-                    e.setQuitMessage(Utils.Color(leavemsg.replace("%player%", p.getName())));
-                }
-            }
-        },20L);
     }
 
     @Override

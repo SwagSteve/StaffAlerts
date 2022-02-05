@@ -1,5 +1,6 @@
 package com.swagsteve.staffalerts;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -44,22 +45,34 @@ public final class StaffAlerts extends JavaPlugin implements Listener {
 
     @EventHandler
     public static void onJoin(PlayerJoinEvent e) {
-        if (e.getPlayer().isOp()) {
 
-            Player p = e.getPlayer();
+        Bukkit.getScheduler().scheduleSyncDelayedTask(StaffAlerts.getInstance(), new Runnable() {
+            @Override
+            public void run() {
+                if (e.getPlayer().isOp()) {
 
-            e.setJoinMessage(Utils.Color(joinmsg.replace("%player%", p.getName())));
-        }
+                    Player p = e.getPlayer();
+
+                    e.setJoinMessage(Utils.Color(joinmsg.replace("%player%", p.getName())));
+                }
+            }
+        },20L);
     }
 
     @EventHandler
     public static void onLeave(PlayerQuitEvent e) {
-        if (e.getPlayer().isOp()) {
 
-            Player p = e.getPlayer();
+        Bukkit.getScheduler().scheduleSyncDelayedTask(StaffAlerts.getInstance(), new Runnable() {
+            @Override
+            public void run() {
+                if (e.getPlayer().isOp()) {
 
-            e.setQuitMessage(Utils.Color(leavemsg.replace("%player%", p.getName())));
-        }
+                    Player p = e.getPlayer();
+
+                    e.setQuitMessage(Utils.Color(leavemsg.replace("%player%", p.getName())));
+                }
+            }
+        },20L);
     }
 
     @Override

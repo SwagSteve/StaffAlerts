@@ -2,3 +2,5 @@ name: StaffAlerts
 version: ${project.version}
 main: com.swagsteve.staffalerts.StaffAlerts
 api-version: 1.16
+commands:
+  sa-reload:

@@ -1,3 +1,4 @@
+# "%player%" - Represents The Player Joining/Leaving
 Messages:
-  JoinAlertMessage: '&a[+]&r&b&l %player% &r&aJoined The Game'
-  LeaveAlertMessage: '&c[-]&r&b&l %player% &r&aHas Left The Game'
+  JoinAlertMessage: '&a[ADMIN]&r&b&l %player% &r&aJoined The Game'
+  LeaveAlertMessage: '&c[ADMIN]&r&b&l %player% &r&aHas Left The Game'

@@ -1,0 +1,3 @@
+Messages:
+  JoinAlertMessage: '&a[+]&r&b&l %player% &r&aJoined The Game'
+  LeaveAlertMessage: '&c[-]&r&b&l %player% &r&aHas Left The Game'
